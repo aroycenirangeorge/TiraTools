@@ -1,10 +1,16 @@
+'''
+Module Name: Printed Text Extraction (text_extraction_printed.py)
+Purpose: To extract text from printed formats like pdf, pictures, etc...
+Need to add: tesseract.exe path and tessdata path (Tesseract OCR need to be download)
+Output: Extracted text will be printed
+'''
 import pytesseract
 import cv2
 import numpy as np
 import os
 
-pytesseract.pytesseract.tesseract_cmd = r"D:\Program Files\Tesseract-OCR\tesseract.exe" #Tesseract_exe_address
-os.environ["TESSDATA_PREFIX"] = r"D:\Program Files\Tesseract-OCR\tessdata" #tessdata_address
+pytesseract.pytesseract.tesseract_cmd = r"D:\Program Files\Tesseract-OCR\tesseract.exe" #tesseract.exe path
+os.environ["TESSDATA_PREFIX"] = r"D:\Program Files\Tesseract-OCR\tessdata" #tessdata path
 
 def run_ocr_on_prescription():
     image_path = input("Image path: ").strip()
